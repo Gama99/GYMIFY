@@ -1,6 +1,6 @@
 # GYMIFY
 
-![spotify.png](static/spotify.png)
+![spotify.png](static/spotify.png=200x200)
 
 ## Gym Spotify Collaborative  Listening Room
 
@@ -14,7 +14,7 @@
 
 ## System Diagram
 
-![Untitled](static/system.png)
+![System](static/system.png)
 
 ---
 
