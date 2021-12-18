@@ -1,7 +1,5 @@
 # GYMIFY
 
-# GYMIFY
-
 ![spotify.png](static/spotify.png)
 
 ## Gym Spotify Collaborative  Listening Room
