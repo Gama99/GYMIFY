@@ -1,0 +1,31 @@
+<div id="loadQueue" class="load">
+    <div id="queue1">
+        {% if QUEUE1.empty == "True" %}
+            <div style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;"><span style="font-size:20px;">Currenlty no song in queue</span></div>
+        {% else %}
+            <form method="POST">
+                <div style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;"><span style="font-size:20px;">{{ QUEUE1.track }} by {{ QUEUE1.user }}</span> <input name="vote1up" type="submit" value="▲" /> <input name="remove1" type="submit" value="𐄂" /></div>
+            </form>
+        {% endif %}
+    </div>
+
+    <div id="queue2">
+        {% if QUEUE2.empty == "True" %}
+            <div style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;"><span style="font-size:20px;">Currenlty no song in queue</span></div>
+        {% else %}
+            <form method="POST">
+                <div style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;"><span style="font-size:20px;">{{ QUEUE2.track }} by {{ QUEUE2.user }}</span> <input name="vote2up" type="submit" value="▲" /> <input name="remove2" type="submit" value="𐄂" /></div>
+            </form>
+        {% endif %}
+    </div>
+
+    <div id="queue3">
+        {% if QUEUE3.empty == "True" %}
+            <div style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;"><span style="font-size:20px;">Currenlty no song in queue</span></div>
+        {% else %}
+            <form method="POST">
+                <div style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;"><span style="font-size:20px;">{{ QUEUE3.track }} by {{ QUEUE3.user }}</span> <input name="vote3up" type="submit" value="▲" /> <input name="remove3" type="submit" value="𐄂" /></div>
+            </form>
+        {% endif %}
+    </div>
+</div>

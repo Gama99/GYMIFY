@@ -1,0 +1,36 @@
+{% extends "flask_user_layout.html" %}
+{% block extra_css %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {{ turbo() }}
+</head>
+{% endblock %}
+
+{% block content %}
+<body>
+    <hr />
+    <div style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:20px;">Currently Playing</span></div>
+
+    {% include "loadCurrent.html" %}
+    {% block content1 %}{% endblock %}
+
+    <p>&nbsp;</p>
+
+    <div style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;"><span style="font-size:24px;">&nbsp;Queue</span></div>
+
+    {% include "loadQueue.html" %}
+    {% block content2 %}{% endblock %}
+
+    <p>&nbsp;</p>
+
+    <form action="/dashboard" method="POST">
+        <div style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: center;"><span style="font-size:24px;">&nbsp;Add Song&nbsp;<input name="addSong" size="20" type="text" />&nbsp;</span> <input type="submit" value="ADD" /></div>
+    </form>
+
+    <hr />
+</body>
+{% endblock %}

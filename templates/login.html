@@ -1,0 +1,16 @@
+{% extends "flask_user_layout.html" %}
+{% block content %}
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <p style="text-align: center;"><img src="../static/spotify.jpg" alt="GymifyLogo" width="250" height="250"/></p>
+    <p style="text-align: center;"><span style="font-size:48px;">GYMIFY</span></p>
+
+    <hr />
+    <p>&nbsp;</p>
+    <p style="text-align: center;"><a href={{ url_for('dashboard') }}><input type="button" value="DASHBOARD" /></a></p>
+
+    <p style="text-align: center;"><a href={{ url_for('user.logout') }}><input type="button" value="SIGN OUT" /></a></p>
+</body>
+{% endblock %}
