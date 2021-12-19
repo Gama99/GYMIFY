@@ -6,7 +6,6 @@ class QueueItem:
     def __init__(self, track, user, user_id, **kwargs):
         self.track = track
         self.user = user
-        self.user_id = user_id
         self.votes = kwargs.get('votes', [])
         self.queuedTimestamp = datetime.strptime(str(datetime.now()), "%Y-%m-%d %H:%M:%S.%f")
 

@@ -1,6 +1,7 @@
 # GYMIFY
 
-![spotify.png](static/spotify.png)
+<!-- ![spotify.png](static/spotify.png) -->
+<img src="static/spotify.png" width="200" height="200">
 
 ## Gym Spotify Collaborative  Listening Room
 

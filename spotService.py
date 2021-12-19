@@ -111,7 +111,7 @@ def create_app():
                     addSong = request.form.get('addSong')
 
                     results = sp.search(q=addSong, limit=1)
-                    songQueue.put(QueueItem(results, current_user.username, current_user.id))
+                    songQueue.put(QueueItem(results, current_user.username))
 
                 elif 'vote1up' in request.form and not songQueue.empty():
                     if current_user.username not in songQueue.queue[0].votes:
@@ -150,11 +150,7 @@ def create_app():
                 return redirect('/dashboard')
 
         return render_template('dashboard.html')
-
-    @turbo.user_id
-    @login_required
-    def get_user_id():
-        return current_user.id
+        return render_template('dashboard.html')
 
     @app.context_processor
     def inject_load():
@@ -241,20 +237,21 @@ def create_app():
 
             time.sleep(5)
 
-    def spot():
-        scope = "user-read-playback-state,user-modify-playback-state"
-        # sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=keys.client_ID, client_secret=keys.client_SECRET,
-        #                                                redirect_uri=keys.redirect_url, scope=scope, open_browser=False))
-        sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope, open_browser=False))
-
-        results = sp.search(q='Dakiti', limit=1)
-        print(results['tracks']['items'][0]['uri'])
-        for i, t in enumerate(results['tracks']['items']):
-            print(' ', i, t['uri'])
-
-        sp.start_playback(uris=[results['tracks']['items'][0]['uri']])
-
-    return app
+    # Example code to test a get spotipy wrapper working with Spotify API
+    # def spot():
+    #     scope = "user-read-playback-state,user-modify-playback-state"
+    #     # sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=keys.client_ID, client_secret=keys.client_SECRET,
+    #     #                                                redirect_uri=keys.redirect_url, scope=scope, open_browser=False))
+    #     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope, open_browser=False))
+    #
+    #     results = sp.search(q='Dakiti', limit=1)
+    #     print(results['tracks']['items'][0]['uri'])
+    #     for i, t in enumerate(results['tracks']['items']):
+    #         print(' ', i, t['uri'])
+    #
+    #     sp.start_playback(uris=[results['tracks']['items'][0]['uri']])
+    #
+    # return app
 
 if __name__ == '__main__':
     app = create_app()
